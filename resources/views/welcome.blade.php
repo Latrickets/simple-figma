@@ -16,7 +16,7 @@
           <div class="d-flex justify-content-center align-items-center text-center" style="height: 80vh; width: 100%; position: absolute;">
             <div style="padding: 1rem;">
                 <div class="mainText">Crea proyectos de<br>diseño fácilmente</div>
-                <div class="secondaryText">Con Amfig es posible diseñar<br>lo que deeses.</div>
+                <div class="secondaryText">Con Amfig es posible diseñar<br>lo que desees.</div>
                 <div class="btn buttonText"><a href="{{ route('register') }}" class="text-white nav-link link-white">Comenzar</a> </div>
             </div>
           </div>
