@@ -11,17 +11,17 @@
     @endsection
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
-<body class="bg-secondary">
+<body style="background-color: #7A7E80">
     @include('layouts.navbar')
     
     <div class="container mt-3">
         <div class="row">
             <div class="col-sm-3">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="https://cms-assets.tutsplus.com/cdn-cgi/image/width=850/uploads/users/1501/posts/35706/image/figma-ui-kits-personal-portfolio-landing-page.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <a href="{{ route('proyecto') }}" class="card-text">Nombre del proyecto.</a>
+                <div class="card" style="border-radius: 2rem;">
+                    <div class="card-body p-0" style="background-color: #7A7E80; border-radius: 2rem;">
+                        <img src="https://cms-assets.tutsplus.com/cdn-cgi/image/width=850/uploads/users/1501/posts/35706/image/figma-ui-kits-personal-portfolio-landing-page.jpg" class="card-img-top" style="border-radius: 2rem 2rem 0rem 0rem; background-color: white;" alt="...">
+                    <div class="card-body p-0">
+                    <a href="{{ route('login') }}" class="card-text py-4" style="display:block; text-align:center; color: white;">Nombre del proyecto</a>
                     </div>
                 </div>
             </div>

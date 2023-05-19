@@ -86,4 +86,9 @@
                 line-height: 24px;
                 text-align: center;
             }
+
+            a{
+                text-decoration: none;
+                color: #000;
+            }
         </style>
