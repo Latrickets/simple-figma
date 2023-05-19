@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <img src="https://cms-assets.tutsplus.com/cdn-cgi/image/width=850/uploads/users/1501/posts/35706/image/figma-ui-kits-personal-portfolio-landing-page.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                    <a href="{{ route('proyecto') }}" class="card-text">Nombre del proyecto.</a>
+                    <a href="{{ url('proyecto') }}" class="card-text">Nombre del proyecto.</a>
                     </div>
                 </div>
             </div>
