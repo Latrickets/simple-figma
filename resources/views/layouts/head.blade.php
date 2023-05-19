@@ -77,4 +77,13 @@
                 background: #90F178;
                 border-radius: 50%;
             }
+
+            h3{
+                font-family: "Inter", sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 24px;
+                text-align: center;
+            }
         </style>

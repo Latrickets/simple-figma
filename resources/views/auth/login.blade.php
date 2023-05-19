@@ -16,14 +16,9 @@
         
         <div class="d-flex justify-content-center align-items-center text-left" style="height: 80vh; width: 100%; position: absolute;">
           {{-- <div class="antialiased flex flex-col sm:justify-center items-center pt-6"> --}}
-              <div style="padding: 48px 64px; background-color: white">
+              <div style="padding: 48px 64px; background-color: white; border-radius: 0.5rem;">
                 <form method="POST" action="{{ route('login') }}">
-                    <h3 style="font-family: 'Inter';
-                font-style: normal;
-                font-weight: 700;
-                font-size: 20px;
-                line-height: 24px;
-                text-align: center;">Iniciar sesión</h3>
+                    <h3 class="pb-2">Iniciar sesión</h3>
                     <x-validation-errors class="mb-4" />
                     @csrf
         
@@ -42,7 +37,7 @@
                     justify-content: center;
                     align-items: center;
                     padding: 16px 12px;">
-                        <button style="width: 300px;background: #7879F1" type="submit" class="btn">Acceder</button>
+                        <button style="width: 300px;background: #7879F1; color: white;" type="submit" class="btn">Acceder</button>
                     </div>
                     <div class="flex items-left justify-start mt-4">
                         <a class="underline text-sm text-gray-600" href="{{ route('register') }}">
