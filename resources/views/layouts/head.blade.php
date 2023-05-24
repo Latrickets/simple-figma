@@ -9,6 +9,9 @@
 
         <!-- Styles -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></script>
+        <script src="https://kit.fontawesome.com/761684499b.js" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
         <style>
             body{
                 background-color: white;
@@ -90,5 +93,69 @@
             a{
                 text-decoration: none;
                 color: #000;
+            }
+
+            div.project{
+                border-radius: 2rem;
+            }
+            div.project:hover{
+                cursor: pointer;
+            }
+            div.project .card-body{
+                background-color: #7A7E80; 
+                border-radius: 2rem;
+            }
+            div.project:hover .card-body{
+                background-color: white;
+                transition: 400ms;
+            }
+            div.project a{
+                display:block; 
+                text-align:center; 
+                color: white;
+            }
+            div.project:hover a{
+                color: #7A7E80;
+                transition: 400ms;
+            }
+
+            label.tool{
+                color: white;
+                border-color: white;
+                margin-left: 1rem;
+                margin-right: 1rem;
+                width: 3rem;
+                border-radius: 4px;
+            }
+
+            input.property{
+                color: white;
+                background-color: #464A4D;
+                border-color: #E3E5E5;
+                border-radius: 1rem;
+                border-style: solid;
+            }
+
+            div.nav-project{
+                display: flex;
+                background-color: #0D0E0F;
+                border-color: white;
+                border-bottom-style: solid;
+                border-bottom-width: thin;
+                padding: 0;
+            }
+            .nav-project button, .nav-project a{
+                background-color: #0D0E0F;
+                color: white;
+                border-style: none;
+                margin: 8px;
+            }
+            .title{
+                position: absolute;
+                left: 45%;
+                top: 0.5rem;
+                color: white;
+                text-align: center;
+                font-weight: 200;
             }
         </style>
