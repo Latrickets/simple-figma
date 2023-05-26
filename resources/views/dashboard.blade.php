@@ -10,17 +10,19 @@
     @include('layouts.navbar')
     
     <div class="container mt-3">
+        @foreach ($projects as $project)
         <div class="row">
             <div class="col-sm-3">
                 <div class="project card mt-4">
                     <div class="card-body p-0">
-                        <img src="https://cms-assets.tutsplus.com/cdn-cgi/image/width=850/uploads/users/1501/posts/35706/image/figma-ui-kits-personal-portfolio-landing-page.jpg" class="card-img-top" style="border-radius: 2rem 2rem 0rem 0rem; background-color: white;" alt="...">
+                        <img src="{{ asset('storage/projects/covers/'.$project->image) }}" class="card-img-top" style="border-radius: 2rem 2rem 0rem 0rem; background-color: white;" alt="...">
                     <div class="card-body p-0">
-                    <a href="{{ route('login') }}" class="card-text py-4">Nombre del proyecto</a>
+                    <a href="{{ route('project.edit', $project->id) }}" class="card-text py-4">{{$project->id}}</a>
                     </div>
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 </body>
 
