@@ -30,7 +30,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [ProjectController::class, 'index'])->name('dashboard');
     Route::post('/project', [ProjectController::class, 'store'])->name('project.store');
     Route::get('/project/{id}/edit', [ProjectController::class, 'edit'])->name('project.edit');
-    Route::put('/project/{id}', [ProjectController::class, 'update']);
+    Route::put('/project/{project}', [ProjectController::class, 'update'])->name('project.update');
     Route::delete('/project/{id}', [ProjectController::class, 'destroy']);
 });
 

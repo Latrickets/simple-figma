@@ -14,9 +14,14 @@
         <a class="ms-4" href="{{ route('dashboard') }}">
             <i class="fas fa-arrow-left"></i>
         </a>
-        <button class="ms-3">
-            <i class="fas fa-save"></i>
-        </button>
+        <form action="{{route('project.update', $project)}}" method="post">
+            @csrf
+            @method('PUT')
+            <input type="hidden" id="figures" name="figures" value="{{$project->figures}}">
+            <button type="submit" class="ms-3">
+                <i class="fas fa-save"></i>
+            </button>
+        </form>
     </div>
     <nav class="p-4" style="background-color: #161719;">
         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">

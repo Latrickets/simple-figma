@@ -55,7 +55,10 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        //
+        $request['figures'] = json_decode($request->figures, true);
+        $project->update($request->all());
+
+        return redirect()->route('dashboard');
     }
 
     /**

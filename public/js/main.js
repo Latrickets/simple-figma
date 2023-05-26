@@ -3,13 +3,19 @@ let figuraArrastrada = false;
 let posX;
 let posY;
 let tamano;
-let figuras = [];
 const divApp = document.getElementById('app');
+let inputHiddenFigures = document.getElementById('figures');
+let figuras = [];
+if (inputHiddenFigures.value === '') {
+} else {
+    figuras.push(inputHiddenFigures.value);
+    figuras = JSON.parse(figuras);
+}
+console.log(figuras);
 
 function setup() {
     const canvas = createCanvas(divApp.offsetWidth, divApp.offsetHeight);
     canvas.parent('app');
-
     // Eventos de mouse para detectar cuando se arrastra el mouse
     canvas.mousePressed(empezarDibujo);
     canvas.mouseReleased(terminarDibujo);
@@ -63,7 +69,11 @@ function terminarDibujo() {
         posY: posY,
         tamano: tamano,
     };
-    if (figura.tipo !== '' && figura.tipo !== undefined) figuras.push(figura);
+    if (figura.tipo !== '' && figura.tipo !== undefined) {
+        figuras.push(figura);
+        inputHiddenFigures.value = JSON.stringify(figuras);
+        inputHiddenFigures.value = JSON.stringify(inputHiddenFigures.value);
+    }
 }
 
 function mouseDragged() {
