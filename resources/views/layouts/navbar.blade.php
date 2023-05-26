@@ -2,6 +2,9 @@
     <div class="container d-flex flex-wrap">
       <ul class="nav me-auto">
         <li class="nav-item"><a href="{{ url('/') }}" class="nav-link text-white link-white px-2 active logoText">Amgif</a></li>
+        @if(Request::is('dashboard'))
+          <li class="nav-item ms-4"><button type="button" class="text-white nav-link link-white px-4 btn" data-toggle="modal" data-target="#myModal" style="background-color: #7879F1"><span class="fa fa-plus me-2"></span>Nuevo proyecto</button></li>
+        @endif
       </ul>
       <ul class="nav">
         @if(Auth::user())
