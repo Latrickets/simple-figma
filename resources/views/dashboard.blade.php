@@ -46,18 +46,19 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+                    <form method="POST" action="{{route('project.store')}}">
                     <div class="modal-body">
-                        <form method="POST" action="">
                             @csrf
                             <div class="form-group">
                                 <label for="projectName">Nombre del Proyecto</label>
-                                <input type="text" class="form-control" id="projectName" placeholder="Ingrese el nombre del proyecto">
+                                <input type="text" name="title" class="form-control" id="projectName" placeholder="Ingrese el nombre del proyecto">
+                                <input type="hidden" name="user_id" value="{{auth()->id()}}">
                             </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Guardar</button>
-                    </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

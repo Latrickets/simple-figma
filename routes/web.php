@@ -28,6 +28,7 @@ Route::middleware(['auth'])->group(function () {
     //     return view('dashboard');
     // })->name('dashboard');
     Route::get('/dashboard', [ProjectController::class, 'index'])->name('dashboard');
+    Route::post('/project', [ProjectController::class, 'store'])->name('project.store');
     Route::get('/project/{id}/edit', [ProjectController::class, 'edit'])->name('project.edit');
     Route::put('/project/{id}', [ProjectController::class, 'update']);
     Route::delete('/project/{id}', [ProjectController::class, 'destroy']);
