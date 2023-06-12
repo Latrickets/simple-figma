@@ -48,6 +48,9 @@
                 <a href="#" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                     <span class="fs-5 d-none d-sm-inline my-2">Elementos</span>
                 </a>
+                <div id="layersPanel">
+                    <h3>Capas</h3>
+                </div>
             </div>
         </div>
         <div class="col py-3" id="app">
