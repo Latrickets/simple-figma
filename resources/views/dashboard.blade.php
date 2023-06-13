@@ -25,7 +25,7 @@
             <div class="col-sm-3">
                 <div class="project card mt-4">
                     <div class="card-body p-0">
-                        <img src="{{ asset('storage/projects/covers/'.$project->image) }}" class="card-img-top"
+                        <img src="{{$project->image }}" class="card-img-top"
                             style="border-radius: 2rem 2rem 0rem 0rem; background-color: white;" alt="...">
                         <div class="card-body p-0">
                             <a href="{{ route('project.edit', $project->id) }}"

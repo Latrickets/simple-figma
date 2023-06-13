@@ -1,3 +1,4 @@
+let canvas = null;
 let herramientaSeleccionada = "selected";
 let figuraSeleccionada = null;
 let figuraArrastrada = false;
@@ -8,6 +9,15 @@ let textoPrompt;
 const divApp = document.getElementById("app");
 let inputHiddenFigures = document.getElementById("figures");
 let figuras = [];
+let inputImage = document.getElementById("image");
+let formSave = document.getElementById("formSave");
+formSave.addEventListener("submit", save);
+function save(e) {
+    e.preventDefault();
+    const imageCover = canvas.elt.toDataURL("image/png", 0.5);
+    inputImage.value = imageCover;
+    this.submit();
+}
 
 if (inputHiddenFigures.value === "") {
 } else {
@@ -17,7 +27,7 @@ if (inputHiddenFigures.value === "") {
 console.log(figuras);
 
 function setup() {
-    const canvas = createCanvas(divApp.offsetWidth, divApp.offsetHeight);
+    canvas = createCanvas(divApp.offsetWidth, divApp.offsetHeight);
     canvas.parent("app");
     // Eventos de mouse para detectar cuando se arrastra el mouse
     canvas.mousePressed(empezarDibujo);

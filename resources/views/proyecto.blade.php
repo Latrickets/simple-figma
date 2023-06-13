@@ -14,10 +14,11 @@
         <a class="ms-4" href="{{ route('dashboard') }}">
             <i class="fas fa-arrow-left"></i>
         </a>
-        <form action="{{route('project.update', $project)}}" method="post">
+        <form id="formSave" action="{{route('project.update', $project)}}" method="post">
             @csrf
             @method('PUT')
             <input type="hidden" id="figures" name="figures" value="{{$project->figures}}">
+            <input type="hidden" id="image" name="image" value="{{$project->image}}">
             <button type="submit" class="ms-3">
                 <i class="fas fa-save"></i>
             </button>
