@@ -25,8 +25,14 @@
             <div class="col-sm-3">
                 <div class="project card mt-4">
                     <div class="card-body p-0">
-                        <img src="{{$project->image }}" class="card-img-top"
-                            style="border-radius: 2rem 2rem 0rem 0rem; background-color: white;" alt="...">
+                        @if ($project->image=="empty.png")
+                            <img src="{{ asset('storage/img/empty.jpg') }}" class="card-img-top"
+                                style="border-radius: 2rem 2rem 0rem 0rem; background-color: white;" alt="...">
+                        @else
+                            <img src="{{$project->image}}" class="card-img-top"
+                                style="border-radius: 2rem 2rem 0rem 0rem; background-color: white;" alt="...">
+                        @endif
+                        
                         <div class="card-body p-0">
                             <a href="{{ route('project.edit', $project->id) }}"
                                 class="card-text py-4">{{$project->id}}</a>

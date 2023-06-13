@@ -9,7 +9,7 @@
 </head>
 <body>
     {{-- @include('layouts.navbar') --}}
-    <h3 class="title">Nombre del proyecto</h3>
+    <h3 class="title">{{$project->title}}</h3>
     <div class="nav-project">
         <a class="ms-4" href="{{ route('dashboard') }}">
             <i class="fas fa-arrow-left"></i>
