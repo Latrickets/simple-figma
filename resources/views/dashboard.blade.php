@@ -33,9 +33,10 @@
                                 style="border-radius: 2rem 2rem 0rem 0rem; background-color: white;" alt="...">
                         @endif
                         
-                        <div class="card-body p-0">
+                        <div class="card-body p-0 text-center">
                             <a href="{{ route('project.edit', $project->id) }}"
-                                class="card-text py-4">{{$project->id}}</a>
+                                class="card-text py-4">{{$project->title}}</a>
+                            <a href="{{ route('project.destroy', $project->id) }}" class=" btn btn-danger mb-2">Eliminar</a>
                         </div>
                     </div>
                 </div>
