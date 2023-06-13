@@ -302,40 +302,57 @@ function crearPanelCapas() {
     // Crear una capa para cada figura en el arreglo 'figuras'
     for (let i = 0; i < figuras.length; i++) {
         const figura = figuras[i];
+
         // Crear un div para la capa
         const layerDiv = document.createElement("div");
-        layerDiv.className = "layer";
+        layerDiv.className = "layer container";
+
         // Crear un span para el nombre de la figura
         const nombreSpan = document.createElement("span");
+        nombreSpan.className = "badge bg-danger text-wrap container";
         nombreSpan.textContent = figura.tipo;
+
+        //Crear div para btn-group
+        const contenedorBotones = document.createElement("div");
+        contenedorBotones.className="btn-group";
+        contenedorBotones.role="group";
+        contenedorBotones.ariaLabel="BasicExample";
 
         // Crear botones para subir, bajar, eliminar e invisible
         const btnSubir = document.createElement("input");
+        btnSubir.className = " btn-primary";
         btnSubir.type = "button";
         btnSubir.value = "Subir";
         btnSubir.onclick = () => subirFigura(figura);
 
         const btnBajar = document.createElement("input");
+        btnBajar.className = " btn-primary";
         btnBajar.type = "button";
         btnBajar.value = "Bajar";
         btnBajar.onclick = () => bajarFigura(figura);
 
         const btnEliminar = document.createElement("input");
+        btnEliminar.className = " btn-primary";
         btnEliminar.type = "button";
         btnEliminar.value = "Eliminar";
         btnEliminar.onclick = () => eliminarFigura(figura);
 
         const btnInvisible = document.createElement("input");
+        btnInvisible.className = " btn-primary";
         btnInvisible.type = "button";
         btnInvisible.value = "Invisible";
         btnInvisible.onclick = () => hacerInvisible(figura);
 
-        // Agregar el nombre de la figura y los botones al div de la capa
+        // Agregar el span y el div de botones al div de layer
         layerDiv.appendChild(nombreSpan);
-        layerDiv.appendChild(btnSubir);
-        layerDiv.appendChild(btnBajar);
-        layerDiv.appendChild(btnEliminar);
-        layerDiv.appendChild(btnInvisible);
+        layerDiv.appendChild(contenedorBotones);
+
+        // Agregar el nombre de la figura y los botones al div de la capa
+        contenedorBotones.appendChild(btnSubir);
+        contenedorBotones.appendChild(btnBajar);
+        contenedorBotones.appendChild(btnEliminar);
+        contenedorBotones.appendChild(btnInvisible);
+
 
         // Agregar el div de la capa al panel
         layersPanel.appendChild(layerDiv);
