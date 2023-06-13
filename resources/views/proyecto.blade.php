@@ -57,7 +57,7 @@
             
         </div>
         <div class="col-auto col-sm-2 px-0" style="background-color: #464A4D">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100" id="atributosPanel">
                 <span class="fs-5 d-none d-sm-inline my-2">Propiedades</span>
                 <div class="row container mt-2 pt-1">
                     <div class="col">
@@ -82,7 +82,7 @@
                     </div>
                     <div class="col">
                         <div class="row">
-                            <p class="col-4">Z</p>
+                            <p class="col-4">H</p>
                             <input class="col-8 property" type="text">
                         </div>
                     </div>

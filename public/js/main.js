@@ -78,6 +78,8 @@ function draw() {
             textoPrompt = "";
         }
     }
+    if (figuraSeleccionada !== null) {
+    }
 }
 // Función para detectar colisión entre el cursor y un círculo
 function colisionCirculo(mouseX, mouseY, posX, posY, radio) {
@@ -96,14 +98,13 @@ function colisionRectangulo(mouseX, mouseY, posX, posY, ancho, alto) {
 }
 
 function mouseClicked() {
-    // Itera sobre las figuras en orden inverso para seleccionar la mas reciente primero
     figuras.forEach((figura) => {
         figura.seleccionada = false;
+        figuraSeleccionada = null;
     });
     if (herramientaSeleccionada === "selected") {
         for (let i = 0; i < figuras.length; i++) {
             const figura = figuras[i];
-            // Verificar colisión según el tipo de figura
             if (
                 figura.tipo === "circulo" &&
                 colisionCirculo(
@@ -115,8 +116,10 @@ function mouseClicked() {
                 )
             ) {
                 figura.seleccionada = true;
+                figuraSeleccionada = i;
                 console.log(figura);
                 console.log("se selecciono un circulo");
+                crearPanelAttributes(figuraSeleccionada);
                 break;
             }
 
@@ -132,8 +135,10 @@ function mouseClicked() {
                 )
             ) {
                 figura.seleccionada = true;
+                figuraSeleccionada = i;
                 console.log(figura);
                 console.log("se selecciono un rectangulo");
+                crearPanelAttributes(figuraSeleccionada);
                 break;
             }
         }
@@ -150,31 +155,6 @@ function empezarDibujo() {
 function terminarDibujo() {
     figuraArrastrada = false;
 
-    // funcion anterior, ahora se usa el constructor de cada clase
-    // Guardar la figura en el arreglo
-    // let figura = {
-    //     tipo: herramientaSeleccionada,
-    //     posX: posX,
-    //     posY: posY,
-    //     posX2: mouseX,
-    //     posY2: mouseY,
-    //     tamano: tamano,
-    //     texto: textoPrompt,
-    //     visible: true,
-    // };
-    // if (herramientaSeleccionada === "selected") {
-    //     figura = figuraSeleccionada;
-    // }
-
-    // if (
-    //     (figura.tipo !== "" &&
-    //         figura.tipo !== undefined &&
-    //         herramientaSeleccionada !== "selected") ||
-    //     (herramientaSeleccionada === "texto" && figura.texto !== "")
-    // ) {
-    //     figuras.push(figura);
-    //     inputHiddenFigures.value = JSON.stringify(figuras);
-    // }
     if (herramientaSeleccionada !== "selected") {
         if (herramientaSeleccionada === "rectangulo") {
             figuras.push(new Rectangulo(posX, posY, tamano, tamano));
@@ -308,6 +288,65 @@ function updateFigures() {
     redraw();
     crearPanelCapas();
 }
+
+function crearPanelAttributes(id) {
+    const atributosPanel = document.getElementById("atributosPanel");
+    atributosPanel.innerHTML = "";
+
+    const nombreSpan = document.createElement("span");
+    nombreSpan.textContent = "Propiedades";
+    nombreSpan.className = "fs-5 d-none d-sm-inline my-2";
+    atributosPanel.appendChild(nombreSpan);
+    let figurita = figuras[id];
+    console.log(figurita);
+    if (figurita.tipo === "rectangulo") {
+        const divXY = document.createElement("div");
+        divXY.className = "row container mt-2 pt-1";
+        const divColX = document.createElement("div");
+        divColX.className = "col";
+        const divRowX = document.createElement("div");
+        divRowX.className = "row";
+        const pInDivX = document.createElement("p");
+        pInDivX.className = "col-4";
+        pInDivX.textContent = "X";
+        const inputInDivX = document.createElement("input");
+        inputInDivX.className = "col-8 property";
+        inputInDivX.type = "number";
+        inputInDivX.value = figurita.posX;
+        inputInDivX.onchange = () => {
+            figurita.posX = inputInDivX.value;
+            figuras[figuraSeleccionada].posX = inputInDivX.value;
+        };
+        divRowX.appendChild(pInDivX);
+        divRowX.appendChild(inputInDivX);
+        divColX.appendChild(divRowX);
+        divXY.appendChild(divColX);
+        atributosPanel.appendChild(divXY);
+
+        const divColY = document.createElement("div");
+        divColY.className = "col";
+        const divRowY = document.createElement("div");
+        divRowY.className = "row";
+        const pInDivY = document.createElement("p");
+        pInDivY.className = "col-4";
+        pInDivY.textContent = "Y";
+        const inputInDivY = document.createElement("input");
+        inputInDivY.className = "col-8 property";
+        inputInDivY.type = "number";
+        inputInDivY.value = figurita.posY;
+        inputInDivY.onchange = () => {
+            figurita.posY = inputInDivY.value;
+            figuras[figuraSeleccionada].posY = inputInDivY.value;
+            console.log(figuras[figuraSeleccionada].posY);
+        };
+        divRowY.appendChild(pInDivY);
+        divRowY.appendChild(inputInDivY);
+        divColY.appendChild(divRowY);
+        divXY.appendChild(divColY);
+        atributosPanel.appendChild(divXY);
+    }
+}
+
 class Rectangulo {
     constructor(posX, posY, ancho, alto, relleno, color) {
         this.tipo = "rectangulo";
