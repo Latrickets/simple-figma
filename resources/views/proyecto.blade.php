@@ -97,12 +97,12 @@
                 </div>
                 <span class="fs-5 d-none d-sm-inline my-2">Relleno</span>
                 <div class="row container mt-2">
-                    <input class="col property" type="text" value="189FFB">
+                    <input class="col property" type="color" value="189FFB">
                     <input class="col property" type="text" value="100%">
                 </div>
                 <span class="fs-5 d-none d-sm-inline my-2">Borde</span>
                 <div class="row container mt-2">
-                    <input class="col property" type="text" value="189FFB">
+                    <input class="col property" type="color" value="189FFB">
                     <input class="col property" type="text" value="100%">
                 </div>
                 <span class="fs-5 d-none d-sm-inline my-2">Texto</span>
@@ -111,7 +111,7 @@
                     <input class="col property" type="text" value="12">
                 </div>
                 <div class="row container mt-2">
-                    <input class="col property" type="text" value="189FFB">
+                    <input class="col property" type="color" value="189FFB">
                     <input class="col property" type="text" value="100%">
                 </div>
             </div>
