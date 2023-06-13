@@ -78,8 +78,6 @@ function draw() {
             textoPrompt = "";
         }
     }
-    if (figuraSeleccionada !== null) {
-    }
 }
 // Función para detectar colisión entre el cursor y un círculo
 function colisionCirculo(mouseX, mouseY, posX, posY, radio) {
@@ -302,6 +300,7 @@ function crearPanelAttributes(id) {
     if (figurita.tipo === "rectangulo") {
         const divXY = document.createElement("div");
         divXY.className = "row container mt-2 pt-1";
+
         const divColX = document.createElement("div");
         divColX.className = "col";
         const divRowX = document.createElement("div");
@@ -313,10 +312,11 @@ function crearPanelAttributes(id) {
         inputInDivX.className = "col-8 property";
         inputInDivX.type = "number";
         inputInDivX.value = figurita.posX;
-        inputInDivX.onchange = () => {
+        inputInDivX.addEventListener("change", () => {
             figurita.posX = inputInDivX.value;
-            figuras[figuraSeleccionada].posX = inputInDivX.value;
-        };
+            figuras[id] = figurita;
+            updateFigures();
+        });
         divRowX.appendChild(pInDivX);
         divRowX.appendChild(inputInDivX);
         divColX.appendChild(divRowX);
@@ -334,16 +334,63 @@ function crearPanelAttributes(id) {
         inputInDivY.className = "col-8 property";
         inputInDivY.type = "number";
         inputInDivY.value = figurita.posY;
-        inputInDivY.onchange = () => {
+        inputInDivY.addEventListener("change", () => {
             figurita.posY = inputInDivY.value;
-            figuras[figuraSeleccionada].posY = inputInDivY.value;
-            console.log(figuras[figuraSeleccionada].posY);
-        };
+            figuras[id] = figurita;
+            updateFigures();
+        });
         divRowY.appendChild(pInDivY);
         divRowY.appendChild(inputInDivY);
         divColY.appendChild(divRowY);
         divXY.appendChild(divColY);
         atributosPanel.appendChild(divXY);
+
+        const divWH = document.createElement("div");
+        divWH.className = "row container mt-2";
+        const divColW = document.createElement("div");
+        divColW.className = "col";
+        const divRowW = document.createElement("div");
+        divRowW.className = "row";
+        const pInDivW = document.createElement("p");
+        pInDivW.className = "col-4";
+        pInDivW.textContent = "W";
+        const inputInDivW = document.createElement("input");
+        inputInDivW.className = "col-8 property";
+        inputInDivW.type = "number";
+        inputInDivW.value = figurita.ancho;
+        inputInDivW.addEventListener("change", () => {
+            figurita.ancho = inputInDivW.value;
+            figuras[id] = figurita;
+            updateFigures();
+        });
+
+        divRowW.appendChild(pInDivW);
+        divRowW.appendChild(inputInDivW);
+        divColW.appendChild(divRowW);
+        divWH.appendChild(divColW);
+        atributosPanel.appendChild(divWH);
+
+        const divColH = document.createElement("div");
+        divColH.className = "col";
+        const divRowH = document.createElement("div");
+        divRowH.className = "row";
+        const pInDivH = document.createElement("p");
+        pInDivH.className = "col-4";
+        pInDivH.textContent = "H";
+        const inputInDivH = document.createElement("input");
+        inputInDivH.className = "col-8 property";
+        inputInDivH.type = "number";
+        inputInDivH.value = figurita.alto;
+        inputInDivH.addEventListener("change", () => {
+            figurita.alto = inputInDivH.value;
+            figuras[id] = figurita;
+            updateFigures();
+        });
+        divRowH.appendChild(pInDivH);
+        divRowH.appendChild(inputInDivH);
+        divColH.appendChild(divRowH);
+        divWH.appendChild(divColH);
+        atributosPanel.appendChild(divWH);
     }
 }
 
