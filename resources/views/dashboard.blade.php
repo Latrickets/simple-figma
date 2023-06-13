@@ -36,7 +36,11 @@
                         <div class="card-body p-0 text-center">
                             <a href="{{ route('project.edit', $project->id) }}"
                                 class="card-text py-4">{{$project->title}}</a>
-                            <a href="{{ route('project.destroy', $project->id) }}" class=" btn btn-danger mb-2">Eliminar</a>
+                            <form action="{{route('project.destroy', $project->id)}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                                <button type="submit" class=" btn btn-danger mb-2">Eliminar</a>
+                            </form>
                         </div>
                     </div>
                 </div>
