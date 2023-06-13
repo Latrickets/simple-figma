@@ -34,11 +34,11 @@
             <input type="radio" class="btn-check" name="btnradio" id="radioCirculo" autocomplete="off" onchange="cambiarFigura()">
             <label class="btn btn-outline-light tool rounded" for="radioCirculo"><i class="fas fa-circle"></i></label>
 
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
-            <label class="btn btn-outline-light tool rounded" for="btnradio4"><i class="fas fa-slash fa-rotate-270"></i></label>
+            <input type="radio" class="btn-check" name="btnradio" id="radioLinea" autocomplete="off" onchange="cambiarFigura()">
+            <label class="btn btn-outline-light tool rounded" for="radioLinea"><i class="fas fa-slash fa-rotate-270"></i></label>
 
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
-            <label class="btn btn-outline-light tool rounded" for="btnradio5" style="font-family:'Times New Roman', Times, serif;"><strong>T</strong></label>
+            <input type="radio" class="btn-check" name="btnradio" id="radioTexto" autocomplete="off" onchange="cambiarFigura()">
+            <label class="btn btn-outline-light tool rounded" for="radioTexto" style="font-family:'Times New Roman', Times, serif;"><strong>T</strong></label>
         </div>
     </nav>
     <div class="container-fluid">
